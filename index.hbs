@@ -1,43 +1,200 @@
-{{!< default}}
-{{!-- The tag above means: insert everything in this file
-into the {body} of the default.hbs template --}}
+{{!< default}} 
 
-<div class="site-header-content">
-    {{#if @site.cover_image}}
-        {{!-- This is a responsive image, it loads different sizes depending on device
-        https://medium.freecodecamp.org/a-guide-to-responsive-images-with-ready-to-use-templates-c400bd65c433 --}}
-        <img class="site-header-cover"
-            srcset="{{img_url @site.cover_image size="s"}} 300w,
-                    {{img_url @site.cover_image size="m"}} 600w,
-                    {{img_url @site.cover_image size="l"}} 1000w,
-                    {{img_url @site.cover_image size="xl"}} 2000w"
-            sizes="100vw"
-            src="{{img_url @site.cover_image size="xl"}}"
-            alt=""
-        />
-    {{/if}}
-    <h1 class="site-title">
-        {{#if @site.logo}}
-            <img class="site-logo" src="{{img_url @site.logo size="m"}}" alt="{{@site.title}}" />
-        {{else}}
-            {{@site.title}}
-        {{/if}}
-    </h1>
-    <p>{{@site.description}}</p>
-</div>
-
-{{!-- The main content area --}}
-<main id="site-main" class="site-main outer">
-    <div class="inner posts">
-
-        <div class="post-feed">
-            {{#foreach posts}}
-
-                {{!-- The tag below includes the markup for each post - partials/post-card.hbs --}}
-                {{> "post-card"}}
-
-            {{/foreach}}
+<!-- jumbotron section -->
+  <div class="jumbotron jumbotron-fluid mb-0 position-relative bg-black padding-tb-8">
+    <div class="container">
+      <div class="d-flex flex-column-reverse row">
+        <div class="col-md-7 text-white py-5 py-lg-0">
+          <h1 class="font-weight-semi-bold display-5 mb-2">Data management that <br> powers your enterprise </h1>
+          <p class="h6 line-height text-justify">Tabular can help your business devise smarter data-driven
+            decisions and make it easier to integrate the insights from the data into your products. Leap ahead to your
+            best move yet.
+          </p>
+          <button class="border-white btn bg-transparent text-white mt-4 px-3 no-pointer" type="submit">Get Started <i
+              class="pl-1 fa fa-angle-right"></i></button>
         </div>
+        <div
+          class="pos-right pos-top-7rem position-absolute col-md-4 mx-0 mx-md-3 px-0 rounded-0 border-0 bg-transparent mobile-unset-class">
+          <img class="banner-img-height w-100 h-100" src="../assets/img/banner.svg" alt="banner-img">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="our-solution position-relative solution-wrapper">
+    <div class="container">
+      <div class="d-flex flex-column-reverse row">
+        <div class="col-md-7 py-5 py-lg-0">
+          <h2 class="mb-4 font-weight-semi-bold">Automate your workflow</h2>
+          <p class="text-justify">Tabular allows anyone who has an idea to build and launch it into the world
+            easily. The unique no-code platform opens the gateway for businesses to bloom, irrespective of skillsets.
+            It lets you connect a variety of functional components to construct different user flows to your
+            application.</p>
+          <p class="text-justify">Beyond technological elements, Tabular also standardizes your data and work
+            culture, imporves both internal decision-making processes and communication, and saves you time and money.
+          </p>
+          <a class="bg-white btn font-weight-semi-bold px-3 text-dark border-dark" type="submit" href="/solutions">View
+            Our Solutions <i class="pl-1 fa fa-angle-right"></i></a>
+        </div>
+        <div class="col-md-5 mobile-unset-class mx-0 pos-right position-absolute px-0 index-automate-img">
+          <img class="" src="../assets/img/group3.svg" alt="automate your workflow">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="rquest-demo bg-black">
+    <div class="container">
+      <div class="row py-5">
+        <div class="col-md-8 text-white">
+          <h2 class="font-weight-semi-bold mb-3">Manage your business better</h2>
+          <p class="font-weight-light mb-0 text-justify">Make data collection easy and enjoy a great user experiance
+            that can be
+            fully customized to fit your products and service. Tabular is a vital data management tool for
+            your business.</p>
+        </div>
+        <div class="col-md-4 px-0 pt-5 pt-lg-0 rounded-0 border-0 d-flex align-items-center justify-content-center">
+          <a class="bg-white btn font-weight-semi-bold px-3 text-dark" type="submit" href="/request-a-demo">Request A
+            Demo <i class="pl-1 fa fa-angle-right"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="anything-imagine padding-tb-6 bg-light">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-10 padding-b10">
+          <h2 class="font-weight-semi-bold text-justify">Create anything you can imagine</h2>
+          <p class="">With Tabular, enterprises can design, deploy and manage the best solutions and services possible
+            to ensure business needs are met productivity is maximized. With mere click and not code, it is simpler
+            than ever for you to automate, archestrate and optimize your business processes.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="anything-can-imagine mb-5 py-3">
+    <div class="d-flex container">
+      <div class="row mx-0">
+        <div class="item d-flex flex-fill col-lg-4 col-12 ">
+          <div class="card d-flex flex-fill">
+            <img class="pt-5 px-5 pb-3 carouse-img" src="../assets/img/group.svg" alt="carousel">
+            <div class="card-body px-4 pb-5 text-center d-flex flex-fill flex-column">
+              <h5>Streamline Operations</h5>
+              <p class="card-text">Simplify or eliminate unnecessary work-related tasks to improve the efficiency of
+                processes in businesses or organizations through the use of Tabular’s modern techniques and
+                technology.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="item d-flex flex-fill col-lg-4 col-12 ">
+          <div class="card d-flex flex-fill">
+            <img class="pt-5 px-5 pb-3 carouse-img" src="../assets/img/group1.svg" alt="carousel1">
+            <div class="card-body px-4 pb-5 text-center d-flex flex-fill flex-column">
+              <h5>Improve User Experience</h5>
+              <p class="card-text">Design, speed, and problem resolution are all features of a great user experience.
+                With Tabular, it’s easier for you to create a meaningfully designed application that keeps users
+                engaged.</p>
+            </div>
+          </div>
+        </div>
+        <div class="item d-flex flex-fill col-lg-4 col-12 ">
+          <div class="card d-flex flex-fill">
+            <img class="pt-5 px-5 pb-3 carouse-img" src="../assets/img/group2.svg" alt="carousel2">
+            <div class="card-body px-4 pb-5 text-center d-flex flex-fill flex-column">
+              <h5>Better Decision Making</h5>
+              <p class="card-text">Tabular provide a popular way for business owners and teams to organize their ideas
+                and data. This allows better collaboration between everybody and improves decision making.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="taking-forward bg-light">
+    <div class="container">
+      <div class="row py-5">
+        <div class="col-md-12 text-center">
+          <h3 class="font-weight-semi-bold">Taking you forward</h3>
+          <p class="">Your journey to dynamic data management just got better. Tabular is an easy-to-use platform that
+            lets you collect, keep, and use your data more securely, efficiently, and cost-effectively.</p>
+          <a class="bg-white btn font-weight-semi-bold px-3 text-dark border-dark" type="submit" href="/solutions">View
+            Our Solutions <i class="pl-1 fa fa-angle-right"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="choose-tabular pb-5">
+    <div class="container">
+      <div class="row padding-tb-6">
+        <div class="col-md-10 mx-auto text-center">
+          <h2 class="font-weight-semi-bold">Business Process Management Software</h2>
+          <p class="text-justify">Tabular is purpose-built from the ground up to support powerful workflows,
+            design complex processes and meet enterprise-grade security, authentication and integration requirements.
+            Our unique workflow platform is so easy-to-use that it will get where you are going in record time.</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-4 col-md-6 col-12 mb-5 px-4">
+          <img src="../assets/img/coding.svg" alt="" class="mb-4" style="height: 38px;">
+          <h4 class="font-weight-semi-bold">Efficient use of <br> internal resources</h4>
+          <p class="text-justify">Tabular can help you utilize your existing resources to the maximum extent
+            while also developing efficient apps. It can be learned by anybody and is created to be user-friendly.</p>
+        </div>
+        <div class="col-lg-4 col-md-6 col-12 mb-5 px-4">
+          <img src="../assets/img/marketing.svg" alt="" class="mb-4" style="height: 38px;">
+          <h4 class="font-weight-semi-bold">Easier to change <br> and customize</h4>
+          <p class="text-justify">Tabular gives users a lot of room to customize and change things according to
+            their requirements. You can change things instantly without worrying about possible bugs.</p>
+        </div>
+        <div class="col-lg-4 col-md-6 col-12 mb-5 px-4">
+          <img src="../assets/img/ui.svg" alt="" class="mb-4" style="height: 38px;">
+          <h4 class="font-weight-semi-bold">Faster development <br> and delivery</h4>
+          <p class="text-justify">Tabular can cut down the development and delivery time of application you are
+            creating. The faster you develop your application, the faster you can deliver it to the requesting
+            consumers.</p>
+        </div>
+        <div class="col-lg-4 col-md-6 col-12 mb-5 px-4">
+          <img src="../assets/img/money-growth.svg" alt="" class="mb-4" style="height: 38px;">
+          <h4 class="font-weight-semi-bold">Better ROI and <br> low risk</h4>
+          <p class="text-justify">Tabular makes everything easier and is more likely to provide you a better
+            return on your investment. You can save over half of the overhead cost required to design a traditional
+            app.</p>
+        </div>
+        <div class="col-lg-4 col-md-6 col-12 mb-5 px-4">
+          <img src="../assets/img/accept.svg" alt="" class="mb-4" style="height: 38px;">
+          <h4 class="font-weight-semi-bold">Build on your <br> own terms</h4>
+          <p class="text-justify">Tabular is designed in a way that anybody can use it seamlessly with ease. You
+            can easily group together data won't have to spend hours negotiating the structure of your documents
+            again.</p>
+        </div>
+        <div class="col-lg-4 col-md-6 col-12 mb-5 px-4">
+          <img src="../assets/img/message.svg" alt="" class="mb-4" style="height: 38px;">
+          <h4 class="font-weight-semi-bold">Bridge <br> communication gaps</h4>
+          <p class="text-justify">Tabular allows business teams to see what's being built in real time, ensuring
+            that nothing gets lost in translation. And it requires zero coding experience, anybody can get involved to
+            bring an app to life.</p>
+        </div>
+      </div>
 
     </div>
-</main>
+  </div>
+
+  <div class="build-today">
+    <div class="container padding-tb-6 bg-black cta-common-height d-flex align-items-center">
+      <div class="d-flex">
+        <div class="col-md-9 mx-auto text-center text-white">
+          <h3 class="font-weight-semi-bold">What do you wish to build today?</h3>
+          <p>Tabular allows you to analyze and monitor data in real-time with customizable
+            dashboards and automatic notification workflows. Anyone can build their own applications, regardless of
+            the complexity involved. Get creative and dive into digital transformation with Tabular today.</p>
+          <button class="bg-white btn font-weight-semi-bold px-4 mt-4 no-pointer" type="submit">Tabular It <i
+              class="pl-1 fa fa-angle-right"></i></button>
+        </div>
+      </div>
+    </div>
+  </div>

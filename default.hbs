@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="{{@site.locale}}">
+
 <head>
 
     {{!-- Basic meta - advanced meta is output with {ghost_head} below --}}
@@ -8,98 +9,404 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="HandheldFriendly" content="True" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="title" content="Tabular | Your go-to no-code development platform">
+    <meta name="description" content="With mere clicks and not code, Tabular makes it is easier than ever for you to automate, orchestrate and optimize your business operations. Get in touch!">
+    <meta name="robots" content="index, follow">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+        integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+        crossorigin="anonymous" />
 
     {{!-- Theme assets - use the {asset} helper to reference styles & scripts,
     this will take care of caching and cache-busting automatically --}}
-    <link rel="stylesheet" type="text/css" href="{{asset "built/screen.css"}}" />
+{{!--     
+    <link rel="stylesheet" type="text/css" href="{{asset "built/screen.css"}}" /> --}}
+    <link rel="stylesheet" type="text/css" href="{{asset "css/style.css"}}" /> 
+    {{!-- <link rel="stylesheet" type="text/css" href="../assets/css/style.css"> --}}
 
     {{!-- This tag outputs all your advanced SEO meta, structured data, and other important settings,
     it should always be the last tag before the closing head tag --}}
     {{ghost_head}}
 
 </head>
+
 <body class="{{body_class}}">
-<div class="viewport">
+    <div class="viewport">
 
-    <header id="gh-head" class="gh-head {{#if @site.cover_image}}has-cover{{/if}}">
-        <nav class="gh-head-inner inner gh-container">
+        <header>
+            <nav class="navbar navbar-expand-lg navbar-light align-items-center py-4">
+                <div class="container">
+                    <a class="d-inline-block font-weight-semi-bold mb-0 tabular-logo" href="{{@site.url}}">
+                        <img src="../assets/img/logo.svg" alt="logo">
+                    </a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse"
+                        data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
 
-            <div class="gh-head-brand">
-                <a class="gh-head-logo" href="{{@site.url}}">
-                    {{#if @site.logo}}
-                        <img src="{{@site.logo}}" alt="{{@site.title}}" />
-                    {{else}}
-                        {{@site.title}}
-                    {{/if}}
-                </a>
-                <a class="gh-burger" role="button">
-                    <div class="gh-burger-box">
-                        <div class="gh-burger-inner"></div>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav ml-auto">
+
+                            <li class="nav-item dropdown position-static">
+                                <a class="nav-link dropdown-toggle text-dark" href="/platform" id="navPLatform"
+                                    role="button" aria-haspopup="true" aria-expanded="false">
+                                    Platform
+                                </a>
+                                <div class="dropdown-menu w-100 mt-0 rounded-0 p-0" aria-labelledby="navPLatform">
+                                    <div class="container py-3">
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <a class="dropdown-item font-weight-semi-bold px-0 py-3"
+                                                    href="/why-tabular">
+                                                    <span>Why Tabular</span>
+                                                    <p class="small wrap-text mb-0">With good contract management, you
+                                                        can reduce the amount of time and resources required to manage
+                                                        and administer all your contracts.</p>
+                                                </a>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <a class="dropdown-item font-weight-semi-bold px-0 py-3"
+                                                    href="/request-a-demo">
+                                                    <span>Request A Demo</span>
+                                                    <p class="small wrap-text mb-0">With good contract management, you
+                                                        can reduce the amount of time and resources required to manage
+                                                        and administer all your contracts.</p>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+
+                            <li class="nav-item dropdown">
+                                <a class="nav-link text-dark" href="/about-us">
+                                    About Us
+                                </a>
+                            </li>
+
+                            <li class="nav-item dropdown position-static">
+                                <a href="/solutions" class="nav-link dropdown-toggle text-dark" id="navCompany"
+                                    role="button" aria-haspopup="true" aria-expanded="false">
+                                    Solutions
+                                </a>
+                                <div class="dropdown-menu w-100 mt-0 rounded-0 p-0" aria-labelledby="solutionsCompany">
+                                    <div class="container py-3">
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <a class="dropdown-item font-weight-semi-bold px-0 py-3"
+                                                    href="/contract-management">
+                                                    <span>Contract Management</span>
+                                                    <p class="small wrap-text mb-0">With good contract management, you
+                                                        can reduce the amount of time and resources required to manage
+                                                        and administer all your contracts.</p>
+                                                </a>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <a class="dropdown-item font-weight-semi-bold px-0 py-3"
+                                                    href="/human-resource-management">
+                                                    <span>Human Resource Management</span>
+                                                    <p class="small wrap-text mb-0">Using an effective HR strategy that
+                                                        is concerned with the organization's goals and missions has
+                                                        multiple benefits for the company.</p>
+                                                </a>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <a class="dropdown-item font-weight-semi-bold px-0 py-3"
+                                                    href="/customer-relationship-management">
+                                                    <span>Customer Relationship Management</span>
+                                                    <p class="small wrap-text mb-0">CRM can help you centralize,
+                                                        optimize and streamline all your internal communication. The
+                                                        better you understand your customers.</p>
+                                                </a>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <a class="dropdown-item font-weight-semi-bold px-0 py-3"
+                                                    href="/training-management">
+                                                    <span>Training Management</span>
+                                                    <p class="small wrap-text mb-0">Employee training management
+                                                        software is used by organizations to provide online learning to
+                                                        their staff and ensure rapid deployment.</p>
+                                                </a>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <a class="dropdown-item font-weight-semi-bold px-0 py-3"
+                                                    href="/project-management">
+                                                    <span>Project Management</span>
+                                                    <p class="small wrap-text mb-0">Project management tools comes with
+                                                        all the required features you need to efficiently plan your
+                                                        projects, manage available resources.</p>
+                                                </a>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <a class="dropdown-item font-weight-semi-bold px-0 py-3"
+                                                    href="/asset-management">
+                                                    <span>Asset Management</span>
+                                                    <p class="small wrap-text mb-0">Implement asset management into your
+                                                        business to control operations with more efficiency. Factors
+                                                        such as a detailed data analysis and real-time data collection.
+                                                    </p>
+                                                </a>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <a class="dropdown-item font-weight-semi-bold px-0 py-3"
+                                                    href="/data-analytics">
+                                                    <span>Data Analytics</span>
+                                                    <p class="small wrap-text mb-0">Data analytics can help your
+                                                        business with everything from personalizing a marketing pitch to
+                                                        identifying and mitigating risks.</p>
+                                                </a>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <a class="dropdown-item font-weight-semi-bold px-0 py-3"
+                                                    href="/warehouse-inventory-management">
+                                                    <span>Warehouse Inventory Management</span>
+                                                    <p class="small wrap-text mb-0">Effective warehouse management is
+                                                        more than just simple data. It's a staging ground for a
+                                                        customized set of solutions for your business workflow.</p>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" href="/contact-us">Contact Us</a>
+                            </li>
+
+                            <button class="btn btn-dark my-2 ml-3 my-sm-0 font-12 no-pointer" type="submit">Get
+                                Started</button>
+
+                        </ul>
                     </div>
+                </div>
+            </nav>
+        </header>
+
+        <main>
+            {{!-- All other templates get inserted here, index.hbs, post.hbs, etc --}}
+            {{{body}}}
+        </main>
+
+        <!-- Footer -->
+         
+            <footer class="page-footer font-small blue mt-3 pt-5 bg-light">
+        
+            <!-- Footer Links -->
+            <div class="container text-center text-md-left">
+                <a class="d-inline-block py-3 font-weight-semi-bold h3 mb-4 tabular-logo" href="{{@site.url}}">
+                    <img src="../assets/img/logo.svg" alt="logo">
                 </a>
+                <!-- Grid row -->
+                <div class="row m-0 d-flex flex-row justify-content-between text-left">
+
+                    <!-- Grid column -->
+                    <div class="mb-md-0 mb-3 col-6 col-md-4 col-lg-4">
+
+                        <div class="row d-flex flex-column">
+                            <!-- Links -->
+                            <h6 class="text-uppercase font-weight-semi-bold text-black-50">SOLUTIONS</h6>
+
+                            <ul class="list-unstyled">
+                                <li class="pb-2">
+                                    <a href="/contract-management"
+                                        class="text-decoration-none text-dark font-14">Contact Management</a>
+                                </li>
+                                <li class="pb-2">
+                                    <a href="/human-resource-management"
+                                        class="text-decoration-none text-dark font-14">Human Resource Management</a>
+                                </li>
+                                <li class="pb-2">
+                                    <a href="/customer-relationship-management"
+                                        class="text-decoration-none text-dark font-14">Customer Relationship
+                                        Management</a>
+                                </li>
+                                <li class="pb-2">
+                                    <a href="/training-management"
+                                        class="text-decoration-none text-dark font-14">Training Managment</a>
+                                </li>
+                                <li class="pb-2">
+                                    <a href="/project-management"
+                                        class="text-decoration-none text-dark font-14">Project Management</a>
+                                </li>
+                                <li class="pb-2">
+                                    <a href="/data-analytics" class="text-decoration-none text-dark font-14">Data
+                                        Analytics</a>
+                                </li>
+                                <li class="pb-2">
+                                    <a href="/warehouse-inventory-management"
+                                        class="text-decoration-none text-dark font-14">Warehouse/Inventory
+                                        Management</a>
+                                </li>
+                            </ul>
+                        </div>
+
+                    </div>
+                    <!-- Grid column -->
+
+                    <!-- Grid column -->
+                    <div class="mb-md-0 mb-3 col-6 col-md-4 col-lg-2">
+
+                        <div class="row d-flex flex-column">
+                            <!-- Links -->
+                            <h6 class="text-uppercase font-weight-semi-bold text-black-50">PLATFORM</h6>
+
+                            <ul class="list-unstyled">
+                                <li class="pb-2">
+                                    <a href="/why-tabular" class="text-decoration-none text-dark font-14">Why
+                                        Tabular</a>
+                                </li>
+                                <li class="pb-2">
+                                    <a href="/request-a-demo" class="text-dark font-14">Request A Demo</a>
+                                </li>
+                            </ul>
+                        </div>
+
+                    </div>
+                    <!-- Grid column -->
+
+                    <!-- Grid column -->
+                    <div class="mb-md-0 mb-3 col-6 col-md-4 col-lg-2">
+
+                        <div class="row d-flex flex-column">
+                            <!-- Links -->
+                            <h6 class="text-uppercase font-weight-semi-bold text-black-50">COMPANY</h6>
+
+                            <ul class="list-unstyled">
+                                <li class="pb-2">
+                                    <a href="/about-us" class="text-dark font-14">About Us</a>
+                                </li>
+                            </ul>
+                        </div>
+
+                    </div>
+                    <!-- Grid column -->
+
+                    <!-- Grid column -->
+                    <div class="mb-md-0 mb-3 col-6 col-md-4 col-lg-2">
+
+                        <div class="row d-flex flex-column">
+                            <!-- Links -->
+                            <h6 class="text-uppercase font-weight-semi-bold text-black-50">RESOURCES</h6>
+
+                            <ul class="list-unstyled">
+                                <li class="pb-2">
+                                    <a href="#!" class="no-pointer text-decoration-none text-dark font-14">Blog</a>
+                                </li>
+                                <li class="pb-2">
+                                    <a href="#!" class="no-pointer text-decoration-none text-dark font-14">Case
+                                        Studies</a>
+                                </li>
+                                <li class="pb-2">
+                                    <a href="#!" class="no-pointer text-decoration-none text-dark font-14">News
+                                        Letters</a>
+                                </li>
+                                <li class="pb-2">
+                                    <a href="#!" class="no-pointer text-decoration-none text-dark font-14">FAQ</a>
+                                </li>
+                            </ul>
+                        </div>
+
+                    </div>
+                    <!-- Grid column -->
+
+                    <!-- Grid column -->
+                    <div class="mb-md-0 mb-3 col-6 col-md-4 col-lg-2">
+
+                        <div class="row d-flex flex-column">
+                            <!-- Links -->
+                            <h6 class="text-uppercase font-weight-semi-bold text-black-50">CONTACT</h6>
+
+                            <ul class="list-unstyled">
+                                <li class="pb-2">
+                                    <a href="#!" class="no-pointer text-decoration-none text-dark font-14">Tabular
+                                        Support</a>
+                                </li>
+                                <li class="pb-2">
+                                    <a href="/contact-us" class="text-decoration-none text-dark font-14">Contact
+                                        Form</a>
+                                </li>
+                            </ul>
+                        </div>
+
+                    </div>
+                    <!-- Grid column -->
+                </div>
+                <!-- Grid row -->
+
             </div>
-            <div class="gh-head-menu">
-                {{navigation}}
+            <!-- Footer Links -->
+
+            <div class="border container">
+
             </div>
-            <div class="gh-head-actions">
-                <div class="gh-social">
-                    {{#if @site.facebook}}
-                        <a class="gh-social-facebook" href="{{facebook_url @site.facebook}}" title="Facebook" target="_blank" rel="noopener">{{> "icons/facebook"}}</a>
-                    {{/if}}
-                    {{#if @site.twitter}}
-                        <a class="gh-social-twitter" href="{{twitter_url @site.twitter}}" title="Twitter" target="_blank" rel="noopener">{{> "icons/twitter"}}</a>
-                    {{/if}}
+
+            <!-- Copyright -->
+            <div class="container footer-copyright text-center py-3">
+
+                <div class="d-flex justify-content-between">
+                    <span class="col-12 col-md-4 py-3 px-1 text-md-left">&copy;
+                        <script>
+                            document.write(new Date().getFullYear());</script> Tabular. All rights reserved
+                    </span>
+
+                    <div class="icons col-12 col-md-4 py-3 px-1">
+                        <span>
+                            <a href="#!"><img src="../assets/img/facebook-circular-logo.svg" alt="facebook-icon"></a>
+                            <a href="#!"><img src="../assets/img/instagram.svg" alt="instagram-icon"></a>
+                            <a href="#!"><img src="../assets/img/linkedin.svg" alt="linkedin-icon"></a>
+                            <a href="#!"><img src="../assets/img/twitter.svg" alt="twitter-icon"></a>
+                        </span>
+                    </div>
+
+                    <span class="col-12 col-md-4 py-3 px-1 text-md-right">Terms & Conditions</span>
+
                 </div>
 
-                {{#unless @member}}
-                    <a class="gh-head-button" href="#/portal/signup">Subscribe</a>
-                {{else}}
-                    <a class="gh-head-button" href="#/portal/account">Account</a>
-                {{/unless}}
             </div>
-        </nav>
-    </header>
+            <!-- Copyright -->
 
-    <main>
-        {{!-- All other templates get inserted here, index.hbs, post.hbs, etc --}}
-        {{{body}}}
-    </main>
-
-    {{!-- The global footer at the very bottom of the screen --}}
-    <footer class="site-footer outer">
-        <div class="inner">
-            <section class="copyright"><a href="{{@site.url}}">{{@site.title}}</a> &copy; {{date format="YYYY"}}</section>
-            <nav class="site-footer-nav">
-                {{navigation type="secondary"}}
-            </nav>
-            <div><a href="https://ghost.org/" target="_blank" rel="noopener">Powered by Ghost</a></div>
-        </div>
-    </footer>
-
-</div>
-{{!-- /.viewport --}}
+        </footer>
+        <!-- Footer -->
 
 
-{{!-- Scripts - handle member signups, responsive videos, infinite scroll, floating headers, and galleries --}}
-<script
-    src="https://code.jquery.com/jquery-3.5.1.min.js"
-    integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
-    crossorigin="anonymous">
-</script>
-<script src="{{asset "built/casper.js"}}"></script>
-<script>
-$(document).ready(function () {
-    // Mobile Menu Trigger
-    $('.gh-burger').click(function () {
-        $('body').toggleClass('gh-head-open');
-    });
-    // FitVids - Makes video embeds responsive
-    $(".gh-content").fitVids();
-});
-</script>
+    </div>
+    {{!-- /.viewport --}}
 
-{{!-- Ghost outputs required functional scripts with this tag - it should always be the last thing before the closing body tag --}}
-{{ghost_foot}}
+
+    {{!-- Scripts - handle member signups, responsive videos, infinite scroll, floating headers, and galleries --}}
+
+    {{!--
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"
+        integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous">
+        </script> --}}
+    {{!--
+    <script src="./js/jquery.min.js"></script> --}}
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+
+    {{!--
+    <script src="{{asset" built/casper.js"}}"></script> --}}
+    <script src="{{asset "js/script.js"}}"></script>
+    {{!-- <script src="../assets/js/script.js"></script> --}}
+
+    {{!-- Ghost outputs required functional scripts with this tag - it should always be the last thing before the
+    closing body tag --}}
+    {{ghost_foot}}
 
 </body>
+
 </html>
